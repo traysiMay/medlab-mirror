@@ -3,7 +3,9 @@ import { fromEvent } from 'rxjs'
 
 export class SocketService {
   init() {
-    this.socket = io('localhost:4400')
+    // this.socket = io('localhost:4400')
+    const server = "https://eng.med--lab.org";
+    this.socket = io(server, { path: "/socket.io", transport: ["websocket"] });
     return this
   }
 
